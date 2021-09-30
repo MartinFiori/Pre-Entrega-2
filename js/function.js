@@ -46,7 +46,7 @@ buscador.addEventListener('keyup', filtrar)
 // 
 function comprarProducto(e) {
     e.preventDefault();
-    let encontrado = stocks.find(x => x.id === e.target.id)
+    let encontrado = stocks.find(x => x.id == e.target.id)
     carrito.push(encontrado)
     sumarCarrito(carrito)
 }
@@ -62,7 +62,7 @@ function sumarCarrito(carrito) {
 
 // Aparecen los icons
 let marca = document.querySelector('.c9__container')
-marca.onclick= () =>{
+marca.onclick = () => {
     let iconos = document.getElementById('iconos')
     iconos.classList.add('mostrar')
 }
@@ -70,8 +70,35 @@ marca.onclick= () =>{
 // Desaparición de los icons y vaciar carrito
 let borrar = document.getElementById('tacho');
 
-borrar.addEventListener('click', function (){
+borrar.addEventListener('click', function () {
     iconos.classList.remove('mostrar')
-    carrito.splice(0,carrito.length)
+    while (carrito.length > 0) {
+        carrito.pop();
+    }
+    total = 0
 })
 
+
+
+// Suma de todo el carrito
+let comprar = document.getElementById('comprar')
+let total = 0;
+comprar.addEventListener('click', function comprar() {
+    for (let i = 0; i < carrito.length; i++) {
+        total = total + carrito[i].precio;
+    }
+})
+
+// Popup Enviar compra
+comprar.addEventListener('click', function togglePopup() {
+    document.getElementById("popup-1").classList.toggle("active");
+    document.body.style.overflow = "hidden";
+})
+
+comprar.addEventListener('click', function mostrarPedido() {
+    for (const producto of carrito) {
+        let lista = document.createElement('li');
+        lista.innerHTML += `1x ..... <strong>${producto.nombre}</strong> $${producto.precio}`
+        document.getElementById('listaCarrito').appendChild(lista)
+    }
+})
