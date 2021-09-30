@@ -1,0 +1,167 @@
+html {
+    background: #c9c9c9 !important;
+}
+
+.btn-compra {
+    text-decoration: none;
+    font-size: 1.4rem;
+    background: #000;
+    color: #fff;
+    padding: 0.4em;
+    border-radius: 20px;
+    transition: all 250ms ease;
+
+    &:hover {
+        background: #fff;
+        outline: 2px solid #f00;
+        color: #f00;
+    }
+
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+.iconos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 300px;
+    opacity: 0;
+}
+
+.mostrar{
+    opacity: 1;
+}
+
+.c9 {
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    &__buscador {
+        width: auto;
+        height: 50px;
+        background: #fff;
+        margin-block: 50px;
+        cursor: pointer;
+        border-radius: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .5rem;
+
+        & .c9__input {
+            width: 325px;
+            outline: none;
+            border: none;
+            border-bottom: 3px solid #000;
+            font-size: 1.4rem;
+            margin-inline: 1em;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+    }
+
+    &__card {
+        background: #fafafa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 325px;
+        width: 250px;
+        margin: 15px;
+        cursor: pointer;
+        border: 2px solid #000;
+        border-radius: 15px;
+        transition: all 250ms ease-out;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 4px 4px rgb(99, 99, 99);
+        }
+
+        & h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        & p {
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        & img {
+            width: auto;
+            height: 100px;
+            padding: 5px;
+            margin: 0 auto;
+            border-radius: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        & button {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__lupa {
+        color: #000;
+        font-size: 1.7rem;
+        margin: 0.3em;
+
+    }
+}
+
+
+.header {
+    box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #fff;
+    & img {
+        width: 65px;
+        height: auto;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+}
+
+
+// changuito
+
+.changuito{
+    position: relative;
+    padding: 25px;
+    background: rgb(141, 141, 141);
+    border-radius: 100%;
+    cursor: pointer;
+    & span,
+    .cart{
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #000;
+    }
+    &Contenido{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
