@@ -191,3 +191,27 @@ h1 {
     background: #fff;
     color: rgb(0, 141, 0);
 }
+
+
+.compraTerminada {
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0px 0px -1px 1px #000;
+    background: #000;
+    margin-top: 30px;
+    padding: 0.6em;
+    border: 2px solid #000;
+    cursor: pointer;
+    border: none;
+    transition: all 300ms ease;
+
+    &:hover {
+        color: #000;
+        background: #fff;
+        transform: translate(10px, -10px);
+        box-shadow: -10px 10px 1px 3px #000;
+        border: 2px solid #c9c9c9;
+
+    }
+}

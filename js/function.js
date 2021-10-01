@@ -37,13 +37,18 @@ function filtrar() {
     if (container.innerHTML === '') {
         container.innerHTML += `<div class="c9__card"><p>Producto no encontrado</p></div>`
     }
+    miEvento()
 }
 
 buscador.addEventListener('keyup', filtrar)
 
+function miEvento() {
+    for (const boton of botones) {
+        boton.addEventListener('click', comprarProducto)
+    }
+}
 
-
-// 
+// AAAAAAAAAAAA======================
 function comprarProducto(e) {
     e.preventDefault();
     let encontrado = stocks.find(x => x.id == e.target.id)
@@ -91,14 +96,31 @@ comprar.addEventListener('click', function comprar() {
 
 // Popup Enviar compra
 comprar.addEventListener('click', function togglePopup() {
-    document.getElementById("popup-1").classList.toggle("active");
+    document.getElementById("popup-1").classList.add("active");
     document.body.style.overflow = "hidden";
 })
 
+
+
+
+
+
+
+// Mostrar pedido en el popup
 comprar.addEventListener('click', function mostrarPedido() {
     for (const producto of carrito) {
         let lista = document.createElement('li');
-        lista.innerHTML += `1x ..... <strong>${producto.nombre}</strong> $${producto.precio}`
+        lista.innerHTML += `1x ..... $${producto.precio}      <strong>${producto.nombre}</strong>`
         document.getElementById('listaCarrito').appendChild(lista)
     }
+})
+
+
+
+
+
+// Pedido terminado
+compraTerminada.addEventListener('click', () => {
+    localStorage.setItem("Pedido Terminado", JSON.stringify(carrito))
+    console.log("terminado pa");
 })

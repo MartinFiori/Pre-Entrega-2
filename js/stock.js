@@ -1,54 +1,30 @@
 // STOCK
-const stocks = [{
-        id: 1,
-        nombre: "Papas",
-        precio: 240,
-        tipo: "papas",
-        img: './assets/papas.jpg'
-    },
-    {
-        id: 2,
-        nombre: "Hamburguesa",
-        precio: 440,
-        tipo: "hamburguesas",
-        img: './assets/burger.jpg'
-    },
-    {
-        id: 3,
-        nombre: "Shis",
-        precio: 690,
-        tipo: "shis",
-        img: './assets/shis.jpg'
-    },
-    {
-        id: 4,
-        nombre: "Tequeños",
-        precio: 340,
-        tipo: "tequeños",
-        img: './assets/tequenios.jpg'
-    },
-    {
-        id: 5,
-        nombre: "Empanadas",
-        precio: 720,
-        tipo: "empanadas",
-        img: './assets/empanadas.jpg'
-    },
-    {
-        id: 6,
-        nombre: "Pizza",
-        precio: 430,
-        tipo: "pizzas",
-        img: './assets/pizzas.jpg'
-    },
-    {
-        id: 7,
-        nombre: "Canastitas",
-        precio: 130,
-        tipo: "canastitas",
-        img: './assets/canastitas.jpg'
-    },
-];
-
-
+const stocks = []
 const carrito = []
+
+
+class Stock {
+    constructor(id, nombre, precio, img) {
+        this.id = parseInt(id);
+        this.nombre = nombre;
+        this.precio = parseInt(precio);
+        this.img = img;
+        this.cantidad = 1;
+    }
+    agregarCantidad(valor) {
+        this.cantidad += valor;
+    }
+    subtotal() {
+        return this.cantidad * this.precio;
+    }
+}
+
+
+
+stocks.push(new Stock(1, "Papas", 240, "./assets/papas.jpg"))
+stocks.push(new Stock(2, "Hamburguesa", 440, "./assets/burger.jpg"))
+stocks.push(new Stock(3, "Shis", 690, "./assets/shis.jpg"))
+stocks.push(new Stock(4, "Tequeños", 340, "./assets/tequenios.jpg"))
+stocks.push(new Stock(5, "Empanadas", 720, "./assets/empanadas.jpg"))
+stocks.push(new Stock(6, "Pizza", 430, "./assets/pizzas.jpg"))
+stocks.push(new Stock(7, "Canastitas", 130, "./assets/canastitas.jpg"))
