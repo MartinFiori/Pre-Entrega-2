@@ -145,6 +145,5 @@ $("#ofertas").on("click", () => {
 
 
 $(window).on("load", ()=>{
-    $(".loading").fadeOut(3000)
-    $(".loading").slideUp(1600)
+    $(".loading").fadeOut(1500)
 })
