@@ -1,8 +1,9 @@
 // STOCK
-const stocks = []
-const carrito = []
+const stocks = [];
+const carrito = [];
+const ofertas = [];
 
-
+// ARRAY PRODUCTOS
 class Stock {
     constructor(id, nombre, precio, img) {
         this.id = parseInt(id);
@@ -28,3 +29,15 @@ stocks.push(new Stock(4, "Tequeños", 340, "./assets/tequenios.jpg"))
 stocks.push(new Stock(5, "Empanadas", 720, "./assets/empanadas.jpg"))
 stocks.push(new Stock(6, "Pizza", 430, "./assets/pizzas.jpg"))
 stocks.push(new Stock(7, "Canastitas", 130, "./assets/canastitas.jpg"))
+
+
+
+// ARRAY OFERTAS
+class Oferta{
+    constructor(img){
+        this.img = img
+    }
+}
+
+
+ofertas.push(new Oferta("./assets/menu/promo.jpeg"))

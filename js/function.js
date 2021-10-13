@@ -124,3 +124,27 @@ compraTerminada.addEventListener('click', () => {
     localStorage.setItem("Pedido Terminado", JSON.stringify(carrito))
     console.log("terminado pa");
 })
+
+
+
+// Slide Ofertas
+$("#ofertas").on("click", () => {
+    $(".containerOfertas").slideToggle(600)
+    $(".imgOfertas").animate({
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%,-50%)",
+        borderRadius: "20px",
+        height: "700px",
+        width: "auto",
+        marginBottom: "5rem"
+    })
+})
+
+
+
+$(window).on("load", ()=>{
+    $(".loading").fadeOut(3000)
+    $(".loading").slideUp(1600)
+})
